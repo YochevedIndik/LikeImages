@@ -35,11 +35,11 @@ namespace ImageShareWithLikes.Web.Controllers
             var connectionString = _configuration.GetConnectionString("ConStr");
             var repo = new ImagesRepository(connectionString);
             List<Image> images = repo.GetAll();
-            var vm = new ImagesViewModel()
+            var vml = new ImagesViewModel()
             {
                 Images = images
             };
-            return View(vm);
+            return View(vml);
         }
         public IActionResult Upload()
         {
